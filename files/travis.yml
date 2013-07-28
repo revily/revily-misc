@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - 2.0.0
+env: 
+  - RAILS_ENV="test"
+before_script: "script/bootstrap"
+script: "script/cibuild"
+bundler_args: --binstubs .bin --path vendor/bundle --without local development staging production
+branches:
+  only:
+    - master
+    
